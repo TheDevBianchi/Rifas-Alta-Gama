@@ -37,13 +37,13 @@ export function PaymentMethodForm() {
   }
 
   return (
-    <div className='bg-gray-800 p-6 rounded-lg'>
-      <h2 className='text-xl font-semibold mb-4' id='payment-method-form'>
+    <div className='bg-gray-800 p-4 md:p-6 rounded-lg'>
+      <h2 className='text-lg md:text-xl font-semibold mb-3 md:mb-4' id='payment-method-form'>
         Agregar Método de Pago
       </h2>
       <form
         onSubmit={ handleSubmit(onSubmit) }
-        className='space-y-4'
+        className='space-y-3 md:space-y-4'
         aria-labelledby='payment-method-form'
         noValidate>
         <FormField
@@ -128,11 +128,11 @@ export function PaymentMethodForm() {
         <button
           type='submit'
           disabled={ isSubmitting }
-          className='w-full bg-primary text-white p-2 rounded hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed'
+          className='w-full bg-primary text-white p-2 md:p-2.5 text-sm md:text-base rounded hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed'
           aria-busy={ isSubmitting }>
           { isSubmitting ? (
             <span className='flex items-center justify-center gap-2'>
-              <Loader2 className='w-4 h-4 animate-spin' />
+              <Loader2 className='w-3 h-3 md:w-4 md:h-4 animate-spin' />
               <span>Agregando...</span>
             </span>
           ) : (

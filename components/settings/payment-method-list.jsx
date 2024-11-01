@@ -10,9 +10,11 @@ export function PaymentMethodList() {
   if (paymentMethods.length === 0) return <EmptyState />
 
   return (
-    <div className='bg-gray-800 p-6 rounded-lg'>
-      <h2 className='text-xl font-semibold mb-4'>Métodos de Pago Actuales</h2>
-      <div className='space-y-4' role='list'>
+    <div className='bg-gray-800 p-4 md:p-6 rounded-lg'>
+      <h2 className='text-lg md:text-xl font-semibold mb-3 md:mb-4'>
+        Métodos de Pago Actuales
+      </h2>
+      <div className='space-y-3 md:space-y-4' role='list'>
         {paymentMethods.map((method) => (
           <PaymentMethodItem key={method.id} method={method} />
         ))}

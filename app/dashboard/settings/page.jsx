@@ -15,7 +15,7 @@ export default function SettingsPage() {
   return (
     <div className='container mx-auto p-6'>
       <h1 className='text-2xl font-bold mb-6'>Configuración</h1>
-      <div className='grid gap-6 md:grid-cols-2'>
+      <div className='grid gap-6 grid-cols-1 lg:grid-cols-2'>
         <PaymentMethodForm />
         <PaymentMethodList />
       </div>
