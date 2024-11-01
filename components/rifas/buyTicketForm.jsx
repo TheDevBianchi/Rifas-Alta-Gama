@@ -79,8 +79,19 @@ const BuyTicketForm = ({ raffle, onSubmit }) => {
     }
   }
 
-  const availableTickets = Array.from({ length: raffle.totalTickets }, (_, i) =>
-    (i + 1).toString().padStart(3, '0')
+  const availableTickets = Array.from(
+    { length: raffle.totalTickets },
+    (_, i) => {
+      const number = i + 1
+      if (raffle.totalTickets <= 100) {
+        return number.toString().padStart(2, '0')
+      } else if (raffle.totalTickets <= 1000) {
+        return number.toString().padStart(3, '0')
+      } else if (raffle.totalTickets <= 10000) {
+        return number.toString().padStart(4, '0')
+      }
+      return number.toString()
+    }
   ).filter(
     (number) =>
       !raffle.soldTickets?.includes(number) &&
